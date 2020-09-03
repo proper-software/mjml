@@ -5,7 +5,7 @@ Npm.depends({
 
 Package.describe({
   name: "propersoftware:mjml",
-  version: "0.1",
+  version: "0.0.1",
   summary: "",
   git: "https://github.com/proper-software/mjml.git",
   documentation: "README.md",
