@@ -21,7 +21,7 @@ Email.sendWithMjmlTemplate({
   template: {
     name: "emails/welcome.mjml", // MJML file template located in private/ directory
     params: {
-      name: "Hello!", // All dynamic properties to put into MJML template
+      name: "customer", // All dynamic properties to put into MJML template
     },
   },
   from: "john.doe@example.com",
