@@ -19,7 +19,7 @@ import "meteor/propersoftware:mjml";
 Email.sendWithMjmlTemplate({
   showLogs: false, // true
   template: {
-    name: "emails/welcome.mjml", // MJML file template
+    name: "emails/welcome.mjml", // MJML file template located in private/ directory
     params: {
       name: "Hello!", // All dynamic properties to put into MJML template
     },
