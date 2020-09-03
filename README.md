@@ -30,6 +30,8 @@ Email.sendWithMjmlTemplate({
 });
 ```
 
+File located in `private/emails` directory:
+
 ```mjml
 <mjml>
   <mj-body background-color="#F4F4F4">
