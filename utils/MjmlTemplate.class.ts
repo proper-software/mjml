@@ -7,8 +7,16 @@ const constants = {
   MJML: ".mjml",
 };
 
+interface IMjmlError {
+  line: number,
+  tagName: string, 
+  message: string,
+};
+
 export class MjmlTemplate {
-  constructor(filePath) {
+  private filePath: string;
+
+  constructor(filePath: string) {
     this.filePath = filePath;
 
     if (!this.fileExists()) {
@@ -28,16 +36,16 @@ export class MjmlTemplate {
     }
   }
 
-  getAsRawText() {
+  getAsRawText() : string {
     return this.readContents();
   }
 
-  compile(text) {
+  compile(text: string) : string {
     const result = mjmlToHtml(text, {});
 
     if (result.errors.length > 0) {
       const errorMessage = result.errors.map(
-        (message) =>
+        (message: IMjmlError) =>
           `Line ${message.line} (tag: ${message.tagName}): ${message.message}`
       );
 
@@ -47,32 +55,32 @@ export class MjmlTemplate {
     return result.html;
   }
 
-  compileToHtml() {
+  compileToHtml() : string {
     return this.compile(this.getAsRawText());
   }
 
-  compileWithParamsToHtml(params) {
+  compileWithParamsToHtml(params: Object) : string {
     const template = handlebars.compile(this.getAsRawText());
     const mjmlSource = template(params);
 
     return this.compile(mjmlSource);
   }
 
-  getBaseDirectory() {
+  getBaseDirectory() : string {
     return pathModule.resolve(`./assets/app/`);
   }
 
-  getExtension() {
+  getExtension() : string {
     return pathModule.extname(this.filePath);
   }
 
-  fileExists() {
+  fileExists() : boolean {
     return fsModule.existsSync(
       pathModule.join(this.getBaseDirectory(), this.filePath)
     );
   }
 
-  readContents() {
+  readContents() : string {
     return fsModule
       .readFileSync(pathModule.join(this.getBaseDirectory(), this.filePath))
       .toString();

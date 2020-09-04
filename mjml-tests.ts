@@ -9,3 +9,4 @@ import { name as packageName } from "meteor/propersoftware:mjml";
 Tinytest.add("mjml - example", function (test) {
   test.equal(packageName, "mjml");
 });
+

@@ -2,7 +2,18 @@ import { Email } from "meteor/email";
 import { MjmlTemplate } from "./utils/MjmlTemplate.class";
 import { Log } from "./utils/Log.class";
 
-Email.sendWithMjmlTemplate = (options) => {
+interface IMjmlTemplateParams {
+  name: string;
+  params: Object;
+}
+
+interface ISendWithMjmlTemplateParams extends Object {
+  template: IMjmlTemplateParams;
+  showLogs: boolean;
+  html: string,
+}
+
+Email.sendWithMjmlTemplate = (options: ISendWithMjmlTemplateParams) => {
   if (typeof options.template === "undefined") {
     return Email.send(options);
   }
