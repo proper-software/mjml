@@ -16,7 +16,7 @@ Package.onUse(function (api) {
   api.use("ecmascript");
   api.use("typescript");
   api.use("email");
-  api.mainModule("mjml.ts");
+  api.mainModule("mjml.ts", "server");
 });
 
 Package.onTest(function (api) {
