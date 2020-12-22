@@ -14,14 +14,14 @@ Package.describe({
 Package.onUse(function (api) {
   api.versionsFrom("1.11");
   api.use("ecmascript");
-  api.use("typescript");
+  api.use("typescript@4.1.2");
   api.use("email");
   api.mainModule("mjml.ts", "server");
 });
 
 Package.onTest(function (api) {
   api.use("ecmascript");
-  api.use("typescript");
+  api.use("typescript@4.1.2");
   api.use("tinytest");
   api.use("propersoftware:mjml");
   api.mainModule("mjml-tests.js");
