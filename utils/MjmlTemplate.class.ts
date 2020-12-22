@@ -1,17 +1,10 @@
+import extensions from "../constants/extensions";
+import IMjmlError from "../interfaces/IMjmlError";
+
 const mjmlToHtml = Npm.require("mjml");
 const pathModule = Npm.require("path");
 const fsModule = Npm.require("fs");
 const handlebars = Npm.require("handlebars");
-
-const constants = {
-  MJML: ".mjml",
-};
-
-interface IMjmlError {
-  line: number,
-  tagName: string, 
-  message: string,
-};
 
 export class MjmlTemplate {
   private filePath: string;
@@ -27,7 +20,7 @@ export class MjmlTemplate {
       );
     }
 
-    if (this.getExtension() !== constants.MJML) {
+    if (this.getExtension() !== extensions.MJML) {
       throw new Error(
         JSON.stringify(
           `File is not in .mjml format. Check extension and try again.`
