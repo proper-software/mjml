@@ -5,7 +5,7 @@ Npm.depends({
 
 Package.describe({
   name: "propersoftware:mjml",
-  version: "0.0.2",
+  version: "0.1.0",
   summary: "Use your MJML templates with meteor/emails package",
   git: "https://github.com/proper-software/mjml.git",
   documentation: "README.md",
