@@ -1,0 +1,33 @@
+{
+  "name": "propersoftware-mjml",
+  "version": "0.1.0",
+  "description": "Use your MJML templates with meteor/emails package",
+  "main": "package.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proper-software/mjml.git"
+  },
+  "author": "Tomasz Nolberczak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/proper-software/mjml/issues"
+  },
+  "homepage": "https://github.com/proper-software/mjml#readme",
+  "devDependencies": {
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-meteor": "^7.2.2",
+    "eslint-plugin-react": "^7.21.5"
+  }
+}
